@@ -20,9 +20,9 @@ class Dot(object):
         self.pos = pos
         self.vel = [0, 0]
         self.acc = [0, 0]
-        self.directions = [random.uniform(0, 2*math.pi) for i in range(500)]
+        self.directions = [random.uniform(0, 2*math.pi) for i in range(1000)]
         self.move = 0
-        self.energy = 150
+        self.energy = 120
         self.fitness = 0
         self.isDead = False
         self.reachedTarget = False
@@ -36,7 +36,7 @@ class Dot(object):
 
     def frame_move(self, canvas):
         if(random.randint(0, 999) <= 1):
-            self.directions[self.move] += random.uniform(-2, 2)*(2*math.pi)/360
+            self.directions[self.move] += random.uniform(-1, 1)*(2*math.pi)/360
 
         self.acc[0] = math.cos(self.directions[self.move])
         self.acc[1] = math.sin(self.directions[self.move])
