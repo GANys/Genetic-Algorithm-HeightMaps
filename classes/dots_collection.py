@@ -33,9 +33,6 @@ def bread(canvas, previous_generation, size, width, height):
                 else:
                     y.directions = [circular_mean(a, b, c) for a, b, c in zip(parent.directions, parent_2.directions, previous_generation[new_generation.index(y)].directions)]
 
-        new_generation.append(parent_1)
-        new_generation.append(parent_2)
-
     return new_generation
 
 

@@ -9,7 +9,9 @@ from classes.heightmap import HeightMap
 from classes.dot import Dot
 from classes.dots_collection import bread
 
-dots_number_init = 200
+#Contact http://labos.ulg.ac.be/etho/brotcorne/
+
+dots_number_init = 500
 
 HM_object = HeightMap(os.path.dirname(os.path.realpath(__file__)))
 
@@ -48,7 +50,7 @@ while generation <= 150:
     if generation == 1:
         new_generation = bread(canvas, '', dots_number, width, height)
     else:
-        new_generation = bread(canvas, previous_generation, dots_number-2, width, height)
+        new_generation = bread(canvas, previous_generation, dots_number, width, height)
 
     for x in previous_generation:
         canvas.delete(x.ball)
@@ -70,7 +72,9 @@ while generation <= 150:
     for x in new_generation:
         x.calculate_fitness(target)
 
-    print('Generation: ' + str(generation))
+    report = '- Generation: ' + str(generation)
+
+    print(report)
 
     reached = 0
 
